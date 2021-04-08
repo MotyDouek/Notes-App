@@ -11,4 +11,4 @@ console.log(msg);
 
 console.log(validator.isURL('http://mead.io'))
 
-console.log(chalk.green.bold.inverse('Success!'));
+console.log(chalk.red.bold.inverse('Error!'));
