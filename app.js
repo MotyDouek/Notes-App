@@ -6,9 +6,24 @@
 const chalk = require('chalk');
 const validator = require('validator');
 const getNotes = require('./notes.js');
+
+/*
 const msg = getNotes();
 console.log(msg);
 
 console.log(validator.isURL('http://mead.io'))
 
-console.log(chalk.red.bold.inverse('Error!'));
+console.log(chalk.green.bold.inverse('Success!'));
+
+console.log(process.argv[2]);
+*/
+
+const command = process.argv[2];
+
+console.log(process.argv);
+
+if (command == 'add') {
+    console.log('Adding note!');
+} else if (command == 'remove') {
+    console.log('Removing note!');
+}
