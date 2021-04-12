@@ -1,35 +1,7 @@
-// const fs = require('fs');
-
-// //fs.writeFileSync('notes.txt', 'My name is Moty.');
-// fs.appendFileSync('notes.txt', " I am from Ramat Gan.");
-
 const chalk = require('chalk');
 const yargs = require('yargs');
 const validator = require('validator');
-const getNotes = require('./notes.js');
-
-/*
-const msg = getNotes();
-console.log(msg);
-
-console.log(validator.isURL('http://mead.io'))
-
-console.log(chalk.green.bold.inverse('Success!'));
-
-console.log(process.argv[2]);
-*/
-
-/*
-const command = process.argv[2];
-
-console.log(process.argv);
-
-if (command == 'add') {
-    console.log('Adding note!');
-} else if (command == 'remove') {
-    console.log('Removing note!');
-}
-*/
+const notes = require('./notes.js');
 
 //Customize yargs version
 yargs.version('1.1.0');
@@ -51,8 +23,7 @@ yargs.command({
         }
     },
     handler: function (argv) {
-        console.log('Title: ' + argv.title);
-        console.log('Body: ' + argv.body);
+        notes.addNote(argv.title, argv.body);
     }
 })
 
